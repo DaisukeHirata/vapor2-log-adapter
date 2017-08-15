@@ -5,9 +5,11 @@ extension Config {
         // allow fuzzy conversions for these types
         // (add your own types here)
         Node.fuzzy = [Row.self, JSON.self, Node.self]
-
+        
         try setupProviders()
         try setupPreparations()
+
+        addConfigurable(log: AllCapsLogger.init, name: "all-caps")
     }
     
     /// Configure providers
